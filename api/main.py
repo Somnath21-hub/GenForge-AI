@@ -1,44 +1,46 @@
+
 from fastapi import FastAPI, BackgroundTasks, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
+
 import sys
 import os
 import json
 
 
 # ============================================================
-# PROJECT PATH SETUP
+# PROJECT ROOT
 # ============================================================
 
 PROJECT_ROOT = os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))
+    os.path.dirname(
+        os.path.abspath(__file__)
+    )
 )
 
 if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
+    sys.path.append(PROJECT_ROOT)
 
 
 # ============================================================
-# IMPORT GENFORGE MODULES
+# GENFORGE IMPORTS
 # ============================================================
 
-try:
-    from orchestration.graph import run_genforge
-    from optimizer.experiment_history import ExperimentHistory
-except Exception as e:
-    print(f"Import warning: {e}")
-    run_genforge = None
-    ExperimentHistory = None
+from orchestration.graph import run_genforge
+from optimizer.experiment_history import ExperimentHistory
 
 
 # ============================================================
-# FASTAPI APP
+# FASTAPI APPLICATION
 # ============================================================
 
 app = FastAPI(
     title="GenForge AI API",
-    description="Synthetic Data Generation and Optimization API",
+    description=(
+        "Backend API for autonomous synthetic data "
+        "generation and ML experiment optimization."
+    ),
     version="1.0.0"
 )
 
@@ -46,6 +48,15 @@ app = FastAPI(
 # ============================================================
 # CORS CONFIGURATION
 # ============================================================
+
+# Local development:
+#   FRONTEND_URL is not required.
+#
+# Production:
+#   Set FRONTEND_URL in Render to your Vercel URL.
+#
+# Example:
+#   FRONTEND_URL=https://genforge-ai.vercel.app
 
 FRONTEND_URL = os.getenv(
     "FRONTEND_URL",
@@ -58,8 +69,9 @@ ALLOWED_ORIGINS = [
     FRONTEND_URL
 ]
 
-# Remove duplicates
+# Remove duplicate origins
 ALLOWED_ORIGINS = list(set(ALLOWED_ORIGINS))
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -75,8 +87,11 @@ app.add_middleware(
 # ============================================================
 
 class ExperimentRequest(BaseModel):
+
     max_iterations: Optional[int] = 3
+
     critic_threshold: Optional[float] = 0.90
+
     development_class_5_limit: Optional[int] = 1000
 
 
@@ -86,11 +101,11 @@ class ExperimentRequest(BaseModel):
 
 @app.get("/")
 def root():
+
     return {
-        "name": "GenForge AI API",
-        "version": "1.0.0",
+        "project": "GenForge AI",
         "status": "running",
-        "message": "GenForge AI backend is running successfully."
+        "version": "1.0.0"
     }
 
 
@@ -99,35 +114,40 @@ def root():
 # ============================================================
 
 @app.get("/health")
-def health_check():
+def health():
+
     return {
-        "status": "healthy",
-        "service": "GenForge AI API"
+        "status": "healthy"
     }
 
 
 # ============================================================
-# BACKGROUND EXPERIMENT FUNCTION
+# BACKGROUND EXPERIMENT
 # ============================================================
 
 def run_experiment_background():
+
     try:
-        print("Starting GenForge AI experiment...")
 
-        if run_genforge is None:
-            raise RuntimeError(
-                "GenForge pipeline could not be imported."
-            )
+        print("\n========================================")
+        print("GENFORGE EXPERIMENT STARTED")
+        print("========================================\n")
 
-        result = run_genforge()
+        run_genforge()
 
-        print("GenForge AI experiment completed.")
+        print("\n========================================")
+        print("GENFORGE EXPERIMENT COMPLETED")
+        print("========================================\n")
 
-        return result
+    except Exception as error:
 
-    except Exception as e:
-        print(f"GenForge experiment failed: {e}")
-        raise
+        print("\n========================================")
+        print("GENFORGE EXPERIMENT FAILED")
+        print("========================================")
+
+        print("Error:", error)
+
+        print("========================================\n")
 
 
 # ============================================================
@@ -139,27 +159,32 @@ def start_experiment(
     request: ExperimentRequest,
     background_tasks: BackgroundTasks
 ):
-    try:
 
-        background_tasks.add_task(
-            run_experiment_background
-        )
+    background_tasks.add_task(
+        run_experiment_background
+    )
 
-        return {
-            "status": "started",
-            "message": "GenForge AI experiment started in the background.",
-            "config": {
-                "max_iterations": request.max_iterations,
-                "critic_threshold": request.critic_threshold,
-                "development_class_5_limit": request.development_class_5_limit
-            }
+    return {
+
+        "status": "started",
+
+        "message": (
+            "GenForge experiment started "
+            "in the background."
+        ),
+
+        "config": {
+
+            "max_iterations":
+                request.max_iterations,
+
+            "critic_threshold":
+                request.critic_threshold,
+
+            "development_class_5_limit":
+                request.development_class_5_limit
         }
-
-    except Exception as e:
-        raise HTTPException(
-            status_code=500,
-            detail=str(e)
-        )
+    }
 
 
 # ============================================================
@@ -171,34 +196,25 @@ def get_experiments():
 
     try:
 
-        if ExperimentHistory is None:
-            raise RuntimeError(
-                "ExperimentHistory could not be imported."
-            )
-
         history = ExperimentHistory()
 
-        if hasattr(history, "get_all_experiments"):
-            experiments = history.get_all_experiments()
-
-        elif hasattr(history, "get_history"):
-            experiments = history.get_history()
-
-        else:
-            experiments = []
+        experiments = history.get_history()
 
         return {
-            "status": "success",
-            "experiments": experiments
+
+            "total_experiments":
+                len(experiments),
+
+            "experiments":
+                experiments
         }
 
-    except Exception as e:
+    except Exception as error:
 
-        return {
-            "status": "error",
-            "experiments": [],
-            "message": str(e)
-        }
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to load experiments: {str(error)}"
+        )
 
 
 # ============================================================
@@ -206,94 +222,64 @@ def get_experiments():
 # ============================================================
 
 @app.get("/experiments/{experiment_id}")
-def get_experiment(experiment_id: str):
+def get_experiment(
+    experiment_id: int
+):
 
     try:
 
-        if ExperimentHistory is None:
-            raise RuntimeError(
-                "ExperimentHistory could not be imported."
-            )
-
         history = ExperimentHistory()
 
-        if hasattr(history, "get_experiment"):
-            experiment = history.get_experiment(
-                experiment_id
-            )
-
-        elif hasattr(history, "get_by_id"):
-            experiment = history.get_by_id(
-                experiment_id
-            )
-
-        else:
-            experiment = None
+        experiment = history.get_experiment(
+            experiment_id
+        )
 
         if experiment is None:
+
             raise HTTPException(
                 status_code=404,
-                detail="Experiment not found."
+                detail="Experiment not found"
             )
 
-        return {
-            "status": "success",
-            "experiment": experiment
-        }
+        return experiment
 
     except HTTPException:
         raise
 
-    except Exception as e:
+    except Exception as error:
+
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=f"Failed to load experiment: {str(error)}"
         )
 
 
 # ============================================================
-# GET BEST EXPERIMENT RESULT
+# GET BEST EXPERIMENT
 # ============================================================
 
 @app.get("/experiments/best/result")
-def get_best_experiment_result():
+def get_best_experiment():
 
     try:
 
-        if ExperimentHistory is None:
-            raise RuntimeError(
-                "ExperimentHistory could not be imported."
-            )
-
         history = ExperimentHistory()
 
-        if hasattr(history, "get_best_experiment"):
-            result = history.get_best_experiment()
+        best = history.get_best_experiment()
 
-        elif hasattr(history, "get_best"):
-            result = history.get_best()
+        if best is None:
 
-        else:
-            result = None
+            return {
+                "message": "No experiments available."
+            }
 
-        if result is None:
-            raise HTTPException(
-                status_code=404,
-                detail="No experiment results found."
-            )
+        return best
 
-        return {
-            "status": "success",
-            "result": result
-        }
+    except Exception as error:
 
-    except HTTPException:
-        raise
-
-    except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=f"Failed to load best experiment: {str(error)}"
         )
 
 
@@ -302,77 +288,56 @@ def get_best_experiment_result():
 # ============================================================
 
 @app.get(
-    "/experiments/compare/{experiment_id_1}/{experiment_id_2}"
+    "/experiments/compare/"
+    "{experiment_id_1}/"
+    "{experiment_id_2}"
 )
 def compare_experiments(
-    experiment_id_1: str,
-    experiment_id_2: str
+    experiment_id_1: int,
+    experiment_id_2: int
 ):
 
     try:
 
-        if ExperimentHistory is None:
-            raise RuntimeError(
-                "ExperimentHistory could not be imported."
-            )
-
         history = ExperimentHistory()
 
-        experiment_1 = None
-        experiment_2 = None
+        comparison = history.compare_experiments(
+            experiment_id_1,
+            experiment_id_2
+        )
 
-        if hasattr(history, "get_experiment"):
-            experiment_1 = history.get_experiment(
-                experiment_id_1
-            )
+        if comparison is None:
 
-            experiment_2 = history.get_experiment(
-                experiment_id_2
-            )
-
-        elif hasattr(history, "get_by_id"):
-            experiment_1 = history.get_by_id(
-                experiment_id_1
-            )
-
-            experiment_2 = history.get_by_id(
-                experiment_id_2
-            )
-
-        if experiment_1 is None:
             raise HTTPException(
                 status_code=404,
-                detail=f"Experiment {experiment_id_1} not found."
+                detail=(
+                    "One or both experiments "
+                    "were not found."
+                )
             )
 
-        if experiment_2 is None:
-            raise HTTPException(
-                status_code=404,
-                detail=f"Experiment {experiment_id_2} not found."
-            )
-
-        return {
-            "status": "success",
-            "experiment_1": experiment_1,
-            "experiment_2": experiment_2
-        }
+        return comparison
 
     except HTTPException:
         raise
 
-    except Exception as e:
+    except Exception as error:
+
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=(
+                f"Failed to compare experiments: "
+                f"{str(error)}"
+            )
         )
 
 
 # ============================================================
-# SYSTEM INFORMATION
+# SYSTEM STATUS & HARDWARE
 # ============================================================
 
 @app.get("/system")
-def system_info():
+def get_system_status():
 
     try:
 
@@ -380,152 +345,175 @@ def system_info():
 
         cuda_available = torch.cuda.is_available()
 
-        model_paths = [
-            os.path.join(
-                PROJECT_ROOT,
-                "models"
-            ),
-            os.path.join(
-                PROJECT_ROOT,
-                "evaluation"
-            )
-        ]
+        if cuda_available:
 
-        checkpoints = []
+            device_name = torch.cuda.get_device_name(0)
 
-        for path in model_paths:
+            device_count = torch.cuda.device_count()
 
-            if os.path.exists(path):
+        else:
 
-                for root_dir, dirs, files in os.walk(path):
+            device_name = "CPU (Fallback)"
 
-                    for file in files:
+            device_count = 0
 
-                        if file.endswith(
-                            (".pth", ".pt", ".ckpt")
-                        ):
-                            checkpoints.append(
-                                os.path.join(
-                                    root_dir,
-                                    file
-                                )
-                            )
 
-        return {
-            "status": "success",
-            "python_version": sys.version,
-            "torch_version": torch.__version__,
-            "cuda_available": cuda_available,
-            "gpu_count": (
-                torch.cuda.device_count()
-                if cuda_available
-                else 0
-            ),
-            "checkpoints": checkpoints
+        checkpoints = {
+
+            "cvae_v1":
+                os.path.exists(
+                    os.path.join(
+                        PROJECT_ROOT,
+                        "models",
+                        "conditional_vae.pth"
+                    )
+                ),
+
+            "cvae_v2":
+                os.path.exists(
+                    os.path.join(
+                        PROJECT_ROOT,
+                        "models",
+                        "conditional_vae_v2.pth"
+                    )
+                ),
+
+            "cvae_v3":
+                os.path.exists(
+                    os.path.join(
+                        PROJECT_ROOT,
+                        "models",
+                        "conditional_vae_v3.pth"
+                    )
+                ),
+
+            "baseline_cnn":
+                os.path.exists(
+                    os.path.join(
+                        PROJECT_ROOT,
+                        "evaluation",
+                        "baseline_cnn.pth"
+                    )
+                ),
+
+            "independent_evaluator":
+                os.path.exists(
+                    os.path.join(
+                        PROJECT_ROOT,
+                        "models",
+                        "independent_evaluator.pth"
+                    )
+                )
         }
 
-    except Exception as e:
 
         return {
-            "status": "error",
-            "message": str(e)
+
+            "status": "online",
+
+            "version": "1.0.0",
+
+            "framework":
+                "FastAPI + Uvicorn",
+
+            "pytorch_version":
+                torch.__version__,
+
+            "cuda_available":
+                cuda_available,
+
+            "gpu_name":
+                device_name,
+
+            "device_count":
+                device_count,
+
+            "langgraph_loaded":
+                True,
+
+            "checkpoints":
+                checkpoints
         }
+
+    except Exception as error:
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"System check failed: {str(error)}"
+        )
 
 
 # ============================================================
-# IMBALANCED DATASET RESEARCH
+# RESEARCH - IMBALANCED DATA
 # ============================================================
 
 @app.get("/research/imbalanced")
-def imbalanced_research():
+def get_imbalanced_research():
 
-    file_path = os.path.join(
+    path = os.path.join(
         PROJECT_ROOT,
-        "analysis",
-        "imbalanced_analysis.json"
+        "experiments",
+        "imbalanced_severe_results.json"
     )
+
+    if not os.path.exists(path):
+
+        raise HTTPException(
+            status_code=404,
+            detail="Imbalanced results not found"
+        )
 
     try:
 
-        if not os.path.exists(file_path):
-            return {
-                "status": "not_found",
-                "message": "Imbalanced analysis file not found."
-            }
-
         with open(
-            file_path,
+            path,
             "r",
             encoding="utf-8"
         ) as file:
 
-            data = json.load(file)
+            return json.load(file)
 
-        return {
-            "status": "success",
-            "data": data
-        }
-
-    except Exception as e:
+    except Exception as error:
 
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=f"Failed to read research data: {str(error)}"
         )
 
 
 # ============================================================
-# MULTI-SEED RESEARCH
+# RESEARCH - MULTI SEED
 # ============================================================
 
 @app.get("/research/multiseed")
-def multiseed_research():
+def get_multiseed_research():
 
-    file_path = os.path.join(
+    path = os.path.join(
         PROJECT_ROOT,
-        "analysis",
-        "multiseed_results.json"
+        "experiments",
+        "multi_seed_results.json"
     )
+
+    if not os.path.exists(path):
+
+        raise HTTPException(
+            status_code=404,
+            detail="Multi-seed results not found"
+        )
 
     try:
 
-        if not os.path.exists(file_path):
-            return {
-                "status": "not_found",
-                "message": "Multi-seed results file not found."
-            }
-
         with open(
-            file_path,
+            path,
             "r",
             encoding="utf-8"
         ) as file:
 
-            data = json.load(file)
+            return json.load(file)
 
-        return {
-            "status": "success",
-            "data": data
-        }
-
-    except Exception as e:
+    except Exception as error:
 
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=f"Failed to read research data: {str(error)}"
         )
-
-
-# ============================================================
-# STARTUP MESSAGE
-# ============================================================
-
-@app.on_event("startup")
-async def startup_event():
-
-    print("=" * 60)
-    print("GenForge AI API")
-    print("Backend started successfully")
-    print(f"Project root: {PROJECT_ROOT}")
-    print(f"Frontend URL: {FRONTEND_URL}")
-    print("=" * 60)
