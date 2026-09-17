@@ -1,0 +1,69 @@
+{
+    "experiment_type": "multi_seed_validation",
+    "model_path": "models/conditional_vae.pth",
+    "generation_strategy": "LATENT_MANIFOLD",
+    "latent_scale": 0.15,
+    "samples_per_minority_class": 1000,
+    "critic_threshold": 0.9,
+    "seeds": [
+        42,
+        123,
+        456
+    ],
+    "seed_results": [
+        {
+            "seed": 42,
+            "model_path": "models/conditional_vae.pth",
+            "generation_strategy": "LATENT_MANIFOLD",
+            "latent_scale": 0.15,
+            "samples_requested": 1000,
+            "accepted_samples": 933,
+            "acceptance_rate": 0.9330000281333923,
+            "critic_accuracy": 97.30000495910645,
+            "diversity_score": 0.33076000213623047,
+            "duplicate_rate": 0.0,
+            "baseline_accuracy": 99.39,
+            "augmented_accuracy": 99.14,
+            "improvement": -0.25
+        },
+        {
+            "seed": 123,
+            "model_path": "models/conditional_vae.pth",
+            "generation_strategy": "LATENT_MANIFOLD",
+            "latent_scale": 0.15,
+            "samples_requested": 1000,
+            "accepted_samples": 873,
+            "acceptance_rate": 0.8730000257492065,
+            "critic_accuracy": 94.10000443458557,
+            "diversity_score": 0.3282766342163086,
+            "duplicate_rate": 0.0,
+            "baseline_accuracy": 98.94,
+            "augmented_accuracy": 99.15,
+            "improvement": 0.21000000000000796
+        },
+        {
+            "seed": 456,
+            "model_path": "models/conditional_vae.pth",
+            "generation_strategy": "LATENT_MANIFOLD",
+            "latent_scale": 0.15,
+            "samples_requested": 1000,
+            "accepted_samples": 913,
+            "acceptance_rate": 0.9130000472068787,
+            "critic_accuracy": 95.10000348091125,
+            "diversity_score": 0.3309101462364197,
+            "duplicate_rate": 0.0,
+            "baseline_accuracy": 99.07000000000001,
+            "augmented_accuracy": 99.31,
+            "improvement": 0.23999999999999488
+        }
+    ],
+    "mean_improvement": 0.06666666666666761,
+    "standard_deviation": 0.274651294068194,
+    "standard_error": 0.1585699985635509,
+    "confidence_interval_95": [
+        -0.24413053051789213,
+        0.3774638638512273
+    ],
+    "decision": "UNCERTAIN",
+    "decision_reason": "Mean improvement is positive, but 95% CI crosses zero. Result cannot be distinguished from noise with 95% confidence."
+}

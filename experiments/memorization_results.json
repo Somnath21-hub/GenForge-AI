@@ -1,0 +1,10 @@
+{
+    "noise_scale": 0.15,
+    "samples_per_class": 100,
+    "real_samples_per_class": 1000,
+    "overall_mean_nearest_distance": 0.05253590965270996,
+    "overall_minimum_distance": 0.0018440485000610352,
+    "overall_maximum_distance": 0.21144157648086548,
+    "similarity_above_0.995_percent": 2.6,
+    "similarity_above_0.990_percent": 10.7
+}

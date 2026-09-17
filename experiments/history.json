@@ -1,0 +1,2355 @@
+[
+    {
+        "experiment_id": 1,
+        "config": {
+            "latent_size": 20,
+            "epochs": 10,
+            "samples_per_class": 500,
+            "critic_threshold": 0.9
+        },
+        "mean_improvement": 0.12666666666667462,
+        "standard_deviation": 0.020816659994658326,
+        "confidence_interval_95": [
+            0.10311039833364662,
+            0.15022293499970263
+        ],
+        "seed_results": [
+            {
+                "seed": 42,
+                "latent_size": 20,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.09,
+                "improvement": 0.15000000000000568,
+                "generated_samples": 5000,
+                "accepted_samples": 4107,
+                "critic_accuracy": 90.88000059127808
+            },
+            {
+                "seed": 123,
+                "latent_size": 20,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.05000000000001,
+                "improvement": 0.11000000000001364,
+                "generated_samples": 5000,
+                "accepted_samples": 4126,
+                "critic_accuracy": 90.73999524116516
+            },
+            {
+                "seed": 456,
+                "latent_size": 20,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.06,
+                "improvement": 0.12000000000000455,
+                "generated_samples": 5000,
+                "accepted_samples": 4104,
+                "critic_accuracy": 90.39999842643738
+            }
+        ]
+    },
+    {
+        "experiment_id": 2,
+        "config": {
+            "latent_size": 20,
+            "epochs": 10,
+            "samples_per_class": 500,
+            "critic_threshold": 0.9
+        },
+        "mean_improvement": 0.12666666666667462,
+        "standard_deviation": 0.020816659994658326,
+        "confidence_interval_95": [
+            0.10311039833364662,
+            0.15022293499970263
+        ],
+        "seed_results": [
+            {
+                "seed": 42,
+                "latent_size": 20,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.09,
+                "improvement": 0.15000000000000568,
+                "generated_samples": 5000,
+                "accepted_samples": 4107,
+                "critic_accuracy": 90.88000059127808
+            },
+            {
+                "seed": 123,
+                "latent_size": 20,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.05000000000001,
+                "improvement": 0.11000000000001364,
+                "generated_samples": 5000,
+                "accepted_samples": 4126,
+                "critic_accuracy": 90.73999524116516
+            },
+            {
+                "seed": 456,
+                "latent_size": 20,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.06,
+                "improvement": 0.12000000000000455,
+                "generated_samples": 5000,
+                "accepted_samples": 4104,
+                "critic_accuracy": 90.39999842643738
+            }
+        ]
+    },
+    {
+        "experiment_id": 3,
+        "config": {
+            "latent_size": 20,
+            "epochs": 15,
+            "samples_per_class": 500,
+            "critic_threshold": 0.9
+        },
+        "mean_improvement": 0.11333333333333447,
+        "standard_deviation": 0.06806859285553771,
+        "confidence_interval_95": [
+            0.03630646933266715,
+            0.19036019733400178
+        ],
+        "seed_results": [
+            {
+                "seed": 42,
+                "latent_size": 20,
+                "cvae_epochs": 15,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.0,
+                "improvement": 0.060000000000002274,
+                "generated_samples": 5000,
+                "accepted_samples": 3802,
+                "critic_accuracy": 86.57999634742737
+            },
+            {
+                "seed": 123,
+                "latent_size": 20,
+                "cvae_epochs": 15,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.03,
+                "improvement": 0.09000000000000341,
+                "generated_samples": 5000,
+                "accepted_samples": 3882,
+                "critic_accuracy": 88.01999688148499
+            },
+            {
+                "seed": 456,
+                "latent_size": 20,
+                "cvae_epochs": 15,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.13,
+                "improvement": 0.18999999999999773,
+                "generated_samples": 5000,
+                "accepted_samples": 3877,
+                "critic_accuracy": 87.65999674797058
+            }
+        ]
+    },
+    {
+        "experiment_id": 4,
+        "config": {
+            "latent_size": 30,
+            "epochs": 10,
+            "samples_per_class": 500,
+            "critic_threshold": 0.9
+        },
+        "mean_improvement": 0.09666666666667349,
+        "standard_deviation": 0.08082903768654676,
+        "confidence_interval_95": [
+            0.005200000000007796,
+            0.1881333333333392
+        ],
+        "seed_results": [
+            {
+                "seed": 42,
+                "latent_size": 30,
+                "cvae_epochs": 10,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.05000000000001,
+                "improvement": 0.11000000000001364,
+                "generated_samples": 5000,
+                "accepted_samples": 3364,
+                "critic_accuracy": 81.00000023841858
+            },
+            {
+                "seed": 123,
+                "latent_size": 30,
+                "cvae_epochs": 10,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 99.11,
+                "improvement": 0.1700000000000017,
+                "generated_samples": 5000,
+                "accepted_samples": 3427,
+                "critic_accuracy": 80.89999556541443
+            },
+            {
+                "seed": 456,
+                "latent_size": 30,
+                "cvae_epochs": 10,
+                "samples_per_class": 500,
+                "critic_threshold": 0.9,
+                "downstream_epochs": 5,
+                "baseline_accuracy": 98.94,
+                "augmented_accuracy": 98.95,
+                "improvement": 0.010000000000005116,
+                "generated_samples": 5000,
+                "accepted_samples": 3393,
+                "critic_accuracy": 81.37999773025513
+            }
+        ]
+    },
+    {
+        "experiment_id": 5,
+        "timestamp": "2026-09-14T09:02:52.607681",
+        "config": {
+            "generator": "ConditionalVAE",
+            "max_iterations": 3,
+            "critic_threshold": 0.9
+        },
+        "iterations": [
+            {
+                "iteration": 1,
+                "baseline_accuracy": 99.17,
+                "augmented_accuracy": 99.1,
+                "improvement": -0.07000000000000739,
+                "accepted_samples": 1376,
+                "total_synthetic_samples": 11841,
+                "independent_synthetic_accuracy": 0.27100751625707287,
+                "acceptance_rate": 0.0,
+                "synthetic_accuracy": 0.07828730344772339,
+                "diversity_score": 0.2521730661392212,
+                "duplicate_rate": 0.0,
+                "quality_score": 23.13149213790894,
+                "improvement_status": "UNCERTAIN",
+                "decision": "RETRAIN",
+                "priority": "CRITICAL",
+                "confidence": 0.85,
+                "reason": "Synthetic quality is POOR (23.1/100). CVAE needs retraining with adjusted hyperparameters (beta, KL annealing, learning rate)."
+            },
+            {
+                "iteration": 2,
+                "baseline_accuracy": 98.92999999999999,
+                "augmented_accuracy": 99.07000000000001,
+                "improvement": 0.14000000000001478,
+                "accepted_samples": 1345,
+                "total_synthetic_samples": 11841,
+                "independent_synthetic_accuracy": 0.27886158263660166,
+                "acceptance_rate": 0.0,
+                "synthetic_accuracy": 0.07955408841371536,
+                "diversity_score": 0.2515825927257538,
+                "duplicate_rate": 0.0,
+                "quality_score": 23.182163536548618,
+                "improvement_status": "UNCERTAIN",
+                "decision": "RETRAIN",
+                "priority": "CRITICAL",
+                "confidence": 0.85,
+                "reason": "Synthetic quality is POOR (23.2/100). CVAE needs retraining with adjusted hyperparameters (beta, KL annealing, learning rate)."
+            }
+        ],
+        "best_result": {
+            "iteration": 2,
+            "baseline_accuracy": 98.92999999999999,
+            "augmented_accuracy": 99.07000000000001,
+            "improvement": 0.14000000000001478,
+            "accepted_samples": 1345,
+            "total_synthetic_samples": 11841,
+            "independent_synthetic_accuracy": 0.27886158263660166,
+            "acceptance_rate": 0.0,
+            "synthetic_accuracy": 0.07955408841371536,
+            "diversity_score": 0.2515825927257538,
+            "duplicate_rate": 0.0,
+            "quality_score": 23.182163536548618,
+            "improvement_status": "UNCERTAIN",
+            "decision": "RETRAIN",
+            "priority": "CRITICAL",
+            "confidence": 0.85,
+            "reason": "Synthetic quality is POOR (23.2/100). CVAE needs retraining with adjusted hyperparameters (beta, KL annealing, learning rate)."
+        }
+    },
+    {
+        "experiment_id": 6,
+        "timestamp": "2026-09-14T09:23:12.476503",
+        "config": {
+            "dataset": "MNIST",
+            "generator": "ConditionalVAE",
+            "latent_size": 32,
+            "critic_threshold": 0.9,
+            "max_iterations": 3,
+            "development_class_5_limit": 1000
+        },
+        "iterations": [
+            {
+                "iteration": 1,
+                "decision": "RETRAIN",
+                "baseline_accuracy": 0.9901,
+                "augmented_accuracy": 0.9895,
+                "improvement": -0.0005999999999999339,
+                "synthetic_accuracy": 0.27852377332995526,
+                "synthetic_total": 11841,
+                "accepted_synthetic": 1157,
+                "acceptance_rate": 0.09771134194747065,
+                "quality_score": 22.428004391520986,
+                "optimizer_decision": {
+                    "decision": "RETRAIN",
+                    "reason": "Synthetic quality is poor. The generator requires retraining.",
+                    "priority": "CRITICAL",
+                    "confidence": 0.85,
+                    "quality_score": 22.428004391520986,
+                    "improvement_status": "NEGATIVE"
+                }
+            },
+            {
+                "iteration": 2,
+                "decision": "RETRAIN",
+                "baseline_accuracy": 0.9896,
+                "augmented_accuracy": 0.9901,
+                "improvement": 0.0004999999999999449,
+                "synthetic_accuracy": 0.29119162232919515,
+                "synthetic_total": 11841,
+                "accepted_synthetic": 1289,
+                "acceptance_rate": 0.10885904906680179,
+                "quality_score": 23.649185035047715,
+                "optimizer_decision": {
+                    "decision": "RETRAIN",
+                    "reason": "Synthetic quality is poor. The generator requires retraining.",
+                    "priority": "CRITICAL",
+                    "confidence": 0.85,
+                    "quality_score": 23.649185035047715,
+                    "improvement_status": "POSITIVE"
+                }
+            },
+            {
+                "iteration": 3,
+                "decision": "RETRAIN",
+                "baseline_accuracy": 0.9906,
+                "augmented_accuracy": 0.9883,
+                "improvement": -0.0023000000000000798,
+                "synthetic_accuracy": 0.3035216620217887,
+                "synthetic_total": 11841,
+                "accepted_synthetic": 1254,
+                "acceptance_rate": 0.10590321763364581,
+                "quality_score": 24.423612870534583,
+                "optimizer_decision": {
+                    "decision": "RETRAIN",
+                    "reason": "Synthetic quality is poor. The generator requires retraining.",
+                    "priority": "CRITICAL",
+                    "confidence": 0.85,
+                    "quality_score": 24.423612870534583,
+                    "improvement_status": "NEGATIVE"
+                }
+            }
+        ],
+        "best_result": {
+            "iteration": 2,
+            "decision": "RETRAIN",
+            "baseline_accuracy": 0.9896,
+            "augmented_accuracy": 0.9901,
+            "improvement": 0.0004999999999999449,
+            "synthetic_accuracy": 0.29119162232919515,
+            "synthetic_total": 11841,
+            "accepted_synthetic": 1289,
+            "acceptance_rate": 0.10885904906680179,
+            "quality_score": 23.649185035047715,
+            "optimizer_decision": {
+                "decision": "RETRAIN",
+                "reason": "Synthetic quality is poor. The generator requires retraining.",
+                "priority": "CRITICAL",
+                "confidence": 0.85,
+                "quality_score": 23.649185035047715,
+                "improvement_status": "POSITIVE"
+            }
+        }
+    },
+    {
+        "experiment_id": 7,
+        "timestamp": "2026-09-14T11:30:35.080935",
+        "config": {
+            "dataset": "MNIST",
+            "generator": "ConditionalVAE",
+            "latent_size": 32,
+            "critic_threshold": 0.9,
+            "max_iterations": 3,
+            "development_class_5_limit": 1000
+        },
+        "iterations": [
+            {
+                "iteration": 1,
+                "decision": "KEEP",
+                "baseline_accuracy": 0.9885,
+                "augmented_accuracy": 0.9917,
+                "improvement": 0.0031999999999999806,
+                "synthetic_accuracy": 0.9750865636348282,
+                "synthetic_total": 11841,
+                "accepted_synthetic": 11055,
+                "acceptance_rate": 0.9336204712439827,
+                "quality_score": 96.26467359175746,
+                "optimizer_decision": {
+                    "decision": "KEEP",
+                    "reason": "Synthetic data improves downstream performance.",
+                    "priority": "LOW",
+                    "confidence": 0.8,
+                    "quality_score": 96.26467359175746,
+                    "improvement_status": "POSITIVE"
+                }
+            }
+        ],
+        "best_result": {
+            "iteration": 1,
+            "decision": "KEEP",
+            "baseline_accuracy": 0.9885,
+            "augmented_accuracy": 0.9917,
+            "improvement": 0.0031999999999999806,
+            "synthetic_accuracy": 0.9750865636348282,
+            "synthetic_total": 11841,
+            "accepted_synthetic": 11055,
+            "acceptance_rate": 0.9336204712439827,
+            "quality_score": 96.26467359175746,
+            "optimizer_decision": {
+                "decision": "KEEP",
+                "reason": "Synthetic data improves downstream performance.",
+                "priority": "LOW",
+                "confidence": 0.8,
+                "quality_score": 96.26467359175746,
+                "improvement_status": "POSITIVE"
+            }
+        }
+    },
+    {
+        "experiment_id": 8,
+        "timestamp": "2026-09-14T11:51:14.738042",
+        "config": {
+            "experiment_type": "severe_class_imbalance_validation",
+            "minority_class": 5,
+            "minority_samples": 100,
+            "strategy": "LATENT_MANIFOLD",
+            "scale": 0.15,
+            "synthetic_target": 6642,
+            "seeds": [
+                42,
+                123,
+                456
+            ]
+        },
+        "iterations": [
+            {
+                "iteration": 1,
+                "decision": "KEEP",
+                "mean_overall_improvement": 1.0900000000000034,
+                "mean_recall_improvement": 12.705530642750384,
+                "mean_f1_improvement": 7.355914215366956,
+                "ci_recall": [
+                    2.5563288835758797,
+                    22.85473240192489
+                ],
+                "ci_f1": [
+                    1.4157465667177078,
+                    13.296081864016204
+                ],
+                "summary": {
+                    "experiment_type": "severe_class_imbalance_validation",
+                    "minority_class": 5,
+                    "minority_real_samples": 100,
+                    "strategy": "LATENT_MANIFOLD",
+                    "scale": 0.15,
+                    "synthetic_target": 6642,
+                    "seeds": [
+                        42,
+                        123,
+                        456
+                    ],
+                    "seed_runs": [
+                        {
+                            "seed": 42,
+                            "baseline_overall": 97.35000000000001,
+                            "augmented_overall": 98.9,
+                            "overall_improvement": 1.5499999999999972,
+                            "baseline_recall": 77.46636771300447,
+                            "augmented_recall": 93.94618834080718,
+                            "recall_improvement": 16.47982062780271,
+                            "baseline_f1": 87.30259001895135,
+                            "augmented_f1": 96.87861271676302,
+                            "f1_improvement": 9.576022697811666,
+                            "accepted_samples": 5094,
+                            "acceptance_rate": 0.7669376134872437,
+                            "synthetic_accuracy": 89.641672372818,
+                            "baseline_metrics": {
+                                "overall_accuracy": 97.35000000000001,
+                                "class_5_tp": 691,
+                                "class_5_fp": 0,
+                                "class_5_fn": 201,
+                                "class_5_tn": 9108,
+                                "class_5_precision": 100.0,
+                                "class_5_recall": 77.46636771300447,
+                                "class_5_f1": 87.30259001895135,
+                                "confusion_matrix": [
+                                    [
+                                        977,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    [
+                                        1,
+                                        1129,
+                                        1,
+                                        2,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1031,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1,
+                                        1008,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        971,
+                                        0,
+                                        3,
+                                        0,
+                                        4,
+                                        4
+                                    ],
+                                    [
+                                        1,
+                                        3,
+                                        1,
+                                        70,
+                                        0,
+                                        691,
+                                        12,
+                                        1,
+                                        97,
+                                        16
+                                    ],
+                                    [
+                                        3,
+                                        1,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        948,
+                                        0,
+                                        5,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        2,
+                                        12,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        1009,
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        974,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        3,
+                                        0,
+                                        3,
+                                        0,
+                                        0,
+                                        1,
+                                        5,
+                                        997
+                                    ]
+                                ]
+                            },
+                            "augmented_metrics": {
+                                "overall_accuracy": 98.9,
+                                "class_5_tp": 838,
+                                "class_5_fp": 0,
+                                "class_5_fn": 54,
+                                "class_5_tn": 9108,
+                                "class_5_precision": 100.0,
+                                "class_5_recall": 93.94618834080718,
+                                "class_5_f1": 96.87861271676302,
+                                "confusion_matrix": [
+                                    [
+                                        978,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        1,
+                                        1132,
+                                        2,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        1,
+                                        0,
+                                        1031,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        2,
+                                        1004,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        4,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        976,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        6
+                                    ],
+                                    [
+                                        2,
+                                        0,
+                                        0,
+                                        14,
+                                        1,
+                                        838,
+                                        8,
+                                        1,
+                                        16,
+                                        12
+                                    ],
+                                    [
+                                        4,
+                                        3,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        948,
+                                        0,
+                                        2,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        1,
+                                        9,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1008,
+                                        1,
+                                        9
+                                    ],
+                                    [
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        971,
+                                        2
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        3,
+                                        0,
+                                        0,
+                                        1,
+                                        1,
+                                        1004
+                                    ]
+                                ]
+                            }
+                        },
+                        {
+                            "seed": 123,
+                            "baseline_overall": 98.50999999999999,
+                            "augmented_overall": 98.68,
+                            "overall_improvement": 0.17000000000001592,
+                            "baseline_recall": 89.12556053811659,
+                            "augmented_recall": 91.59192825112108,
+                            "recall_improvement": 2.4663677130044874,
+                            "baseline_f1": 94.2501481920569,
+                            "augmented_f1": 95.61146869514336,
+                            "f1_improvement": 1.3613205030864606,
+                            "accepted_samples": 5767,
+                            "acceptance_rate": 0.868262529373169,
+                            "synthetic_accuracy": 94.53477263450623,
+                            "baseline_metrics": {
+                                "overall_accuracy": 98.50999999999999,
+                                "class_5_tp": 795,
+                                "class_5_fp": 0,
+                                "class_5_fn": 97,
+                                "class_5_tn": 9108,
+                                "class_5_precision": 100.0,
+                                "class_5_recall": 89.12556053811659,
+                                "class_5_f1": 94.2501481920569,
+                                "confusion_matrix": [
+                                    [
+                                        976,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        2,
+                                        1,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        1132,
+                                        1,
+                                        1,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1032,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1,
+                                        1007,
+                                        0,
+                                        0,
+                                        0,
+                                        2,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        979,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        2
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        63,
+                                        0,
+                                        795,
+                                        2,
+                                        0,
+                                        28,
+                                        4
+                                    ],
+                                    [
+                                        2,
+                                        2,
+                                        0,
+                                        0,
+                                        3,
+                                        0,
+                                        946,
+                                        0,
+                                        5,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        2,
+                                        7,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        1014,
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        970,
+                                        3
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        7,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        1000
+                                    ]
+                                ]
+                            },
+                            "augmented_metrics": {
+                                "overall_accuracy": 98.68,
+                                "class_5_tp": 817,
+                                "class_5_fp": 0,
+                                "class_5_fn": 75,
+                                "class_5_tn": 9108,
+                                "class_5_precision": 100.0,
+                                "class_5_recall": 91.59192825112108,
+                                "class_5_f1": 95.61146869514336,
+                                "confusion_matrix": [
+                                    [
+                                        979,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        1132,
+                                        0,
+                                        3,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        1,
+                                        0,
+                                        1023,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        7,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        1009,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        2,
+                                        0,
+                                        0,
+                                        972,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        6
+                                    ],
+                                    [
+                                        1,
+                                        2,
+                                        0,
+                                        45,
+                                        0,
+                                        817,
+                                        10,
+                                        3,
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        2,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        948,
+                                        0,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        5,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1023,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        1,
+                                        0,
+                                        1,
+                                        2,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        968,
+                                        2
+                                    ],
+                                    [
+                                        0,
+                                        2,
+                                        0,
+                                        2,
+                                        3,
+                                        0,
+                                        0,
+                                        5,
+                                        0,
+                                        997
+                                    ]
+                                ]
+                            }
+                        },
+                        {
+                            "seed": 456,
+                            "baseline_overall": 97.39,
+                            "augmented_overall": 98.94,
+                            "overall_improvement": 1.5499999999999972,
+                            "baseline_recall": 75.33632286995515,
+                            "augmented_recall": 94.50672645739911,
+                            "recall_improvement": 19.170403587443957,
+                            "baseline_f1": 85.93350383631713,
+                            "augmented_f1": 97.06390328151987,
+                            "f1_improvement": 11.130399445202741,
+                            "accepted_samples": 4447,
+                            "acceptance_rate": 0.6695272326469421,
+                            "synthetic_accuracy": 87.35320568084717,
+                            "baseline_metrics": {
+                                "overall_accuracy": 97.39,
+                                "class_5_tp": 672,
+                                "class_5_fp": 0,
+                                "class_5_fn": 220,
+                                "class_5_tn": 9108,
+                                "class_5_precision": 100.0,
+                                "class_5_recall": 75.33632286995515,
+                                "class_5_f1": 85.93350383631713,
+                                "confusion_matrix": [
+                                    [
+                                        978,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        1,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        1131,
+                                        1,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        2,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1031,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        1007,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        2,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        979,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        2
+                                    ],
+                                    [
+                                        7,
+                                        5,
+                                        1,
+                                        96,
+                                        0,
+                                        672,
+                                        13,
+                                        3,
+                                        65,
+                                        30
+                                    ],
+                                    [
+                                        4,
+                                        2,
+                                        0,
+                                        1,
+                                        1,
+                                        0,
+                                        947,
+                                        0,
+                                        3,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        1,
+                                        2,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        1023,
+                                        1,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        1,
+                                        3,
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        967,
+                                        2
+                                    ],
+                                    [
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        2,
+                                        0,
+                                        0,
+                                        1,
+                                        1,
+                                        1004
+                                    ]
+                                ]
+                            },
+                            "augmented_metrics": {
+                                "overall_accuracy": 98.94,
+                                "class_5_tp": 843,
+                                "class_5_fp": 2,
+                                "class_5_fn": 49,
+                                "class_5_tn": 9106,
+                                "class_5_precision": 99.76331360946745,
+                                "class_5_recall": 94.50672645739911,
+                                "class_5_f1": 97.06390328151987,
+                                "confusion_matrix": [
+                                    [
+                                        979,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    [
+                                        0,
+                                        1135,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        3,
+                                        2,
+                                        1023,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        3,
+                                        0
+                                    ],
+                                    [
+                                        2,
+                                        1,
+                                        0,
+                                        1003,
+                                        0,
+                                        2,
+                                        0,
+                                        0,
+                                        2,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        980,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    [
+                                        3,
+                                        2,
+                                        0,
+                                        20,
+                                        0,
+                                        843,
+                                        5,
+                                        1,
+                                        14,
+                                        4
+                                    ],
+                                    [
+                                        6,
+                                        1,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        950,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        0,
+                                        5,
+                                        5,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        1015,
+                                        2,
+                                        0
+                                    ],
+                                    [
+                                        4,
+                                        0,
+                                        1,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        966,
+                                        2
+                                    ],
+                                    [
+                                        1,
+                                        0,
+                                        0,
+                                        2,
+                                        5,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        1000
+                                    ]
+                                ]
+                            }
+                        }
+                    ],
+                    "overall_mean_improvement": 1.0900000000000034,
+                    "overall_std": 0.7967433714816727,
+                    "overall_se": 0.4599999999999938,
+                    "overall_95_ci": [
+                        0.18840000000001556,
+                        1.9915999999999912
+                    ],
+                    "recall_mean_improvement": 12.705530642750384,
+                    "recall_std": 8.968843419978404,
+                    "recall_se": 5.178164162844135,
+                    "recall_95_ci": [
+                        2.5563288835758797,
+                        22.85473240192489
+                    ],
+                    "f1_mean_improvement": 7.355914215366956,
+                    "f1_std": 5.249322537212984,
+                    "f1_se": 3.0306977799230856,
+                    "f1_95_ci": [
+                        1.4157465667177078,
+                        13.296081864016204
+                    ],
+                    "decision": "KEEP",
+                    "decision_reason": "Statistically significant positive improvement in minority class performance (95% CI strictly positive)."
+                }
+            }
+        ],
+        "best_result": {
+            "iteration": 1,
+            "decision": "KEEP",
+            "mean_overall_improvement": 1.0900000000000034,
+            "mean_recall_improvement": 12.705530642750384,
+            "mean_f1_improvement": 7.355914215366956,
+            "ci_recall": [
+                2.5563288835758797,
+                22.85473240192489
+            ],
+            "ci_f1": [
+                1.4157465667177078,
+                13.296081864016204
+            ],
+            "summary": {
+                "experiment_type": "severe_class_imbalance_validation",
+                "minority_class": 5,
+                "minority_real_samples": 100,
+                "strategy": "LATENT_MANIFOLD",
+                "scale": 0.15,
+                "synthetic_target": 6642,
+                "seeds": [
+                    42,
+                    123,
+                    456
+                ],
+                "seed_runs": [
+                    {
+                        "seed": 42,
+                        "baseline_overall": 97.35000000000001,
+                        "augmented_overall": 98.9,
+                        "overall_improvement": 1.5499999999999972,
+                        "baseline_recall": 77.46636771300447,
+                        "augmented_recall": 93.94618834080718,
+                        "recall_improvement": 16.47982062780271,
+                        "baseline_f1": 87.30259001895135,
+                        "augmented_f1": 96.87861271676302,
+                        "f1_improvement": 9.576022697811666,
+                        "accepted_samples": 5094,
+                        "acceptance_rate": 0.7669376134872437,
+                        "synthetic_accuracy": 89.641672372818,
+                        "baseline_metrics": {
+                            "overall_accuracy": 97.35000000000001,
+                            "class_5_tp": 691,
+                            "class_5_fp": 0,
+                            "class_5_fn": 201,
+                            "class_5_tn": 9108,
+                            "class_5_precision": 100.0,
+                            "class_5_recall": 77.46636771300447,
+                            "class_5_f1": 87.30259001895135,
+                            "confusion_matrix": [
+                                [
+                                    977,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    2,
+                                    0
+                                ],
+                                [
+                                    1,
+                                    1129,
+                                    1,
+                                    2,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1031,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1,
+                                    1008,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    971,
+                                    0,
+                                    3,
+                                    0,
+                                    4,
+                                    4
+                                ],
+                                [
+                                    1,
+                                    3,
+                                    1,
+                                    70,
+                                    0,
+                                    691,
+                                    12,
+                                    1,
+                                    97,
+                                    16
+                                ],
+                                [
+                                    3,
+                                    1,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    948,
+                                    0,
+                                    5,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    12,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    1009,
+                                    1,
+                                    3
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    974,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    3,
+                                    0,
+                                    3,
+                                    0,
+                                    0,
+                                    1,
+                                    5,
+                                    997
+                                ]
+                            ]
+                        },
+                        "augmented_metrics": {
+                            "overall_accuracy": 98.9,
+                            "class_5_tp": 838,
+                            "class_5_fp": 0,
+                            "class_5_fn": 54,
+                            "class_5_tn": 9108,
+                            "class_5_precision": 100.0,
+                            "class_5_recall": 93.94618834080718,
+                            "class_5_f1": 96.87861271676302,
+                            "confusion_matrix": [
+                                [
+                                    978,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    1,
+                                    1132,
+                                    2,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    1031,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    2,
+                                    1004,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    4,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    976,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    6
+                                ],
+                                [
+                                    2,
+                                    0,
+                                    0,
+                                    14,
+                                    1,
+                                    838,
+                                    8,
+                                    1,
+                                    16,
+                                    12
+                                ],
+                                [
+                                    4,
+                                    3,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    948,
+                                    0,
+                                    2,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    1,
+                                    9,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1008,
+                                    1,
+                                    9
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    971,
+                                    2
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    3,
+                                    0,
+                                    0,
+                                    1,
+                                    1,
+                                    1004
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "seed": 123,
+                        "baseline_overall": 98.50999999999999,
+                        "augmented_overall": 98.68,
+                        "overall_improvement": 0.17000000000001592,
+                        "baseline_recall": 89.12556053811659,
+                        "augmented_recall": 91.59192825112108,
+                        "recall_improvement": 2.4663677130044874,
+                        "baseline_f1": 94.2501481920569,
+                        "augmented_f1": 95.61146869514336,
+                        "f1_improvement": 1.3613205030864606,
+                        "accepted_samples": 5767,
+                        "acceptance_rate": 0.868262529373169,
+                        "synthetic_accuracy": 94.53477263450623,
+                        "baseline_metrics": {
+                            "overall_accuracy": 98.50999999999999,
+                            "class_5_tp": 795,
+                            "class_5_fp": 0,
+                            "class_5_fn": 97,
+                            "class_5_tn": 9108,
+                            "class_5_precision": 100.0,
+                            "class_5_recall": 89.12556053811659,
+                            "class_5_f1": 94.2501481920569,
+                            "confusion_matrix": [
+                                [
+                                    976,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    2,
+                                    1,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    1132,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1032,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1,
+                                    1007,
+                                    0,
+                                    0,
+                                    0,
+                                    2,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    979,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    2
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    63,
+                                    0,
+                                    795,
+                                    2,
+                                    0,
+                                    28,
+                                    4
+                                ],
+                                [
+                                    2,
+                                    2,
+                                    0,
+                                    0,
+                                    3,
+                                    0,
+                                    946,
+                                    0,
+                                    5,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    7,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    1014,
+                                    1,
+                                    3
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    970,
+                                    3
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    7,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    1000
+                                ]
+                            ]
+                        },
+                        "augmented_metrics": {
+                            "overall_accuracy": 98.68,
+                            "class_5_tp": 817,
+                            "class_5_fp": 0,
+                            "class_5_fn": 75,
+                            "class_5_tn": 9108,
+                            "class_5_precision": 100.0,
+                            "class_5_recall": 91.59192825112108,
+                            "class_5_f1": 95.61146869514336,
+                            "confusion_matrix": [
+                                [
+                                    979,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    1132,
+                                    0,
+                                    3,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    1023,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    7,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    1009,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    0,
+                                    0,
+                                    972,
+                                    0,
+                                    1,
+                                    0,
+                                    1,
+                                    6
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    0,
+                                    45,
+                                    0,
+                                    817,
+                                    10,
+                                    3,
+                                    11,
+                                    3
+                                ],
+                                [
+                                    6,
+                                    2,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    948,
+                                    0,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    5,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1023,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    1,
+                                    2,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    968,
+                                    2
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    0,
+                                    2,
+                                    3,
+                                    0,
+                                    0,
+                                    5,
+                                    0,
+                                    997
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "seed": 456,
+                        "baseline_overall": 97.39,
+                        "augmented_overall": 98.94,
+                        "overall_improvement": 1.5499999999999972,
+                        "baseline_recall": 75.33632286995515,
+                        "augmented_recall": 94.50672645739911,
+                        "recall_improvement": 19.170403587443957,
+                        "baseline_f1": 85.93350383631713,
+                        "augmented_f1": 97.06390328151987,
+                        "f1_improvement": 11.130399445202741,
+                        "accepted_samples": 4447,
+                        "acceptance_rate": 0.6695272326469421,
+                        "synthetic_accuracy": 87.35320568084717,
+                        "baseline_metrics": {
+                            "overall_accuracy": 97.39,
+                            "class_5_tp": 672,
+                            "class_5_fp": 0,
+                            "class_5_fn": 220,
+                            "class_5_tn": 9108,
+                            "class_5_precision": 100.0,
+                            "class_5_recall": 75.33632286995515,
+                            "class_5_f1": 85.93350383631713,
+                            "confusion_matrix": [
+                                [
+                                    978,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    1,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    1131,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    2,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1031,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    1007,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    2,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    979,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    2
+                                ],
+                                [
+                                    7,
+                                    5,
+                                    1,
+                                    96,
+                                    0,
+                                    672,
+                                    13,
+                                    3,
+                                    65,
+                                    30
+                                ],
+                                [
+                                    4,
+                                    2,
+                                    0,
+                                    1,
+                                    1,
+                                    0,
+                                    947,
+                                    0,
+                                    3,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    1,
+                                    2,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    1023,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    1,
+                                    3,
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    967,
+                                    2
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    2,
+                                    0,
+                                    0,
+                                    1,
+                                    1,
+                                    1004
+                                ]
+                            ]
+                        },
+                        "augmented_metrics": {
+                            "overall_accuracy": 98.94,
+                            "class_5_tp": 843,
+                            "class_5_fp": 2,
+                            "class_5_fn": 49,
+                            "class_5_tn": 9106,
+                            "class_5_precision": 99.76331360946745,
+                            "class_5_recall": 94.50672645739911,
+                            "class_5_f1": 97.06390328151987,
+                            "confusion_matrix": [
+                                [
+                                    979,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                [
+                                    0,
+                                    1135,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    3,
+                                    2,
+                                    1023,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    3,
+                                    0
+                                ],
+                                [
+                                    2,
+                                    1,
+                                    0,
+                                    1003,
+                                    0,
+                                    2,
+                                    0,
+                                    0,
+                                    2,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    980,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                [
+                                    3,
+                                    2,
+                                    0,
+                                    20,
+                                    0,
+                                    843,
+                                    5,
+                                    1,
+                                    14,
+                                    4
+                                ],
+                                [
+                                    6,
+                                    1,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    950,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                [
+                                    0,
+                                    5,
+                                    5,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    1015,
+                                    2,
+                                    0
+                                ],
+                                [
+                                    4,
+                                    0,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    966,
+                                    2
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    0,
+                                    2,
+                                    5,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    1000
+                                ]
+                            ]
+                        }
+                    }
+                ],
+                "overall_mean_improvement": 1.0900000000000034,
+                "overall_std": 0.7967433714816727,
+                "overall_se": 0.4599999999999938,
+                "overall_95_ci": [
+                    0.18840000000001556,
+                    1.9915999999999912
+                ],
+                "recall_mean_improvement": 12.705530642750384,
+                "recall_std": 8.968843419978404,
+                "recall_se": 5.178164162844135,
+                "recall_95_ci": [
+                    2.5563288835758797,
+                    22.85473240192489
+                ],
+                "f1_mean_improvement": 7.355914215366956,
+                "f1_std": 5.249322537212984,
+                "f1_se": 3.0306977799230856,
+                "f1_95_ci": [
+                    1.4157465667177078,
+                    13.296081864016204
+                ],
+                "decision": "KEEP",
+                "decision_reason": "Statistically significant positive improvement in minority class performance (95% CI strictly positive)."
+            }
+        }
+    },
+    {
+        "experiment_id": 9,
+        "timestamp": "2026-09-14T12:30:19.097037",
+        "config": {
+            "dataset": "MNIST",
+            "generator": "ConditionalVAE",
+            "latent_size": 32,
+            "critic_threshold": 0.9,
+            "max_iterations": 3,
+            "development_class_5_limit": 1000
+        },
+        "iterations": [
+            {
+                "iteration": 1,
+                "decision": "KEEP",
+                "baseline_accuracy": 0.9892,
+                "augmented_accuracy": 0.991,
+                "improvement": 0.0018000000000000238,
+                "synthetic_accuracy": 0.9739886833882273,
+                "synthetic_total": 11841,
+                "accepted_synthetic": 11178,
+                "acceptance_rate": 0.9440081074233595,
+                "quality_score": 96.49945105987669,
+                "optimizer_decision": {
+                    "decision": "KEEP",
+                    "reason": "Synthetic data improves downstream performance.",
+                    "priority": "LOW",
+                    "confidence": 0.8,
+                    "quality_score": 96.49945105987669,
+                    "improvement_status": "POSITIVE"
+                }
+            }
+        ],
+        "best_result": {
+            "iteration": 1,
+            "decision": "KEEP",
+            "baseline_accuracy": 0.9892,
+            "augmented_accuracy": 0.991,
+            "improvement": 0.0018000000000000238,
+            "synthetic_accuracy": 0.9739886833882273,
+            "synthetic_total": 11841,
+            "accepted_synthetic": 11178,
+            "acceptance_rate": 0.9440081074233595,
+            "quality_score": 96.49945105987669,
+            "optimizer_decision": {
+                "decision": "KEEP",
+                "reason": "Synthetic data improves downstream performance.",
+                "priority": "LOW",
+                "confidence": 0.8,
+                "quality_score": 96.49945105987669,
+                "improvement_status": "POSITIVE"
+            }
+        }
+    },
+    {
+        "experiment_id": 10,
+        "timestamp": "2026-09-14T12:32:06.689959",
+        "config": {
+            "dataset": "MNIST",
+            "generator": "ConditionalVAE",
+            "latent_size": 32,
+            "critic_threshold": 0.9,
+            "max_iterations": 3,
+            "development_class_5_limit": 1000
+        },
+        "iterations": [
+            {
+                "iteration": 1,
+                "decision": "KEEP",
+                "baseline_accuracy": 0.9885,
+                "augmented_accuracy": 0.9907,
+                "improvement": 0.0021999999999999797,
+                "synthetic_accuracy": 0.9738197787349041,
+                "synthetic_total": 11841,
+                "accepted_synthetic": 11096,
+                "acceptance_rate": 0.9370830166371084,
+                "quality_score": 96.27987501055654,
+                "optimizer_decision": {
+                    "decision": "KEEP",
+                    "reason": "Synthetic data improves downstream performance.",
+                    "priority": "LOW",
+                    "confidence": 0.8,
+                    "quality_score": 96.27987501055654,
+                    "improvement_status": "POSITIVE"
+                }
+            }
+        ],
+        "best_result": {
+            "iteration": 1,
+            "decision": "KEEP",
+            "baseline_accuracy": 0.9885,
+            "augmented_accuracy": 0.9907,
+            "improvement": 0.0021999999999999797,
+            "synthetic_accuracy": 0.9738197787349041,
+            "synthetic_total": 11841,
+            "accepted_synthetic": 11096,
+            "acceptance_rate": 0.9370830166371084,
+            "quality_score": 96.27987501055654,
+            "optimizer_decision": {
+                "decision": "KEEP",
+                "reason": "Synthetic data improves downstream performance.",
+                "priority": "LOW",
+                "confidence": 0.8,
+                "quality_score": 96.27987501055654,
+                "improvement_status": "POSITIVE"
+            }
+        }
+    }
+]

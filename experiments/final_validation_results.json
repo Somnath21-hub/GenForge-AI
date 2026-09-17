@@ -1,0 +1,50 @@
+{
+    "experiment_type": "final_multi_seed_validation",
+    "seeds": [
+        42,
+        123,
+        456
+    ],
+    "evaluator_validation_accuracy": 0.9845,
+    "total_synthetic_planned": 9708,
+    "results": [
+        {
+            "seed": 42,
+            "baseline_accuracy": 0.9916,
+            "augmented_accuracy": 0.9889,
+            "improvement": -0.0027000000000000357,
+            "total_synthetic": 9708,
+            "accepted_samples": 979,
+            "acceptance_rate": 0.10084466419447878,
+            "independent_synthetic_accuracy": 0.2720436753193243
+        },
+        {
+            "seed": 123,
+            "baseline_accuracy": 0.9916,
+            "augmented_accuracy": 0.9919,
+            "improvement": 0.00029999999999996696,
+            "total_synthetic": 9708,
+            "accepted_samples": 977,
+            "acceptance_rate": 0.10063864853728884,
+            "independent_synthetic_accuracy": 0.27935723114956734
+        },
+        {
+            "seed": 456,
+            "baseline_accuracy": 0.9916,
+            "augmented_accuracy": 0.9898,
+            "improvement": -0.0018000000000000238,
+            "total_synthetic": 9708,
+            "accepted_samples": 914,
+            "acceptance_rate": 0.09414915533580552,
+            "independent_synthetic_accuracy": 0.27111660486196953
+        }
+    ],
+    "mean_improvement": -0.0014000000000000308,
+    "standard_deviation": 0.0015394804318340652,
+    "standard_error": 0.0008888194417315589,
+    "confidence_interval_95": [
+        -0.005224590057770929,
+        0.002424590057770867
+    ],
+    "decision": "UNCERTAIN"
+}
