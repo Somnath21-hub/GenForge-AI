@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, BackgroundTasks, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -49,30 +48,39 @@ app = FastAPI(
 # CORS CONFIGURATION
 # ============================================================
 
-# Local development:
-#   FRONTEND_URL is not required.
-#
-# Production:
-#   Set FRONTEND_URL in Render to your Vercel URL.
-#
-# Example:
-#   FRONTEND_URL=https://genforge-ai.vercel.app
+# Production frontend
+DEFAULT_FRONTEND_URL = "https://gen-forge-ai-1.vercel.app"
 
+# Read FRONTEND_URL from Render environment variables.
+# If it is not present, use the production Vercel URL.
 FRONTEND_URL = os.getenv(
     "FRONTEND_URL",
-    "http://localhost:5173"
-)
+    DEFAULT_FRONTEND_URL
+).strip().rstrip("/")
 
+
+# Allowed frontend origins
 ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    FRONTEND_URL
+    "https://gen-forge-ai-1.vercel.app",
 ]
 
-# Remove duplicate origins
-ALLOWED_ORIGINS = list(set(ALLOWED_ORIGINS))
+
+# Add environment frontend URL if it is different
+if FRONTEND_URL not in ALLOWED_ORIGINS:
+    ALLOWED_ORIGINS.append(FRONTEND_URL)
 
 
+# Print CORS configuration in Render logs
+print("=" * 60)
+print("CORS CONFIGURATION")
+print("FRONTEND_URL:", FRONTEND_URL)
+print("ALLOWED_ORIGINS:", ALLOWED_ORIGINS)
+print("=" * 60)
+
+
+# FastAPI CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
@@ -117,7 +125,8 @@ def root():
 def health():
 
     return {
-        "status": "healthy"
+        "status": "healthy",
+        "service": "GenForge AI API"
     }
 
 
@@ -213,49 +222,17 @@ def get_experiments():
 
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to load experiments: {str(error)}"
-        )
-
-
-# ============================================================
-# GET SINGLE EXPERIMENT
-# ============================================================
-
-@app.get("/experiments/{experiment_id}")
-def get_experiment(
-    experiment_id: int
-):
-
-    try:
-
-        history = ExperimentHistory()
-
-        experiment = history.get_experiment(
-            experiment_id
-        )
-
-        if experiment is None:
-
-            raise HTTPException(
-                status_code=404,
-                detail="Experiment not found"
+            detail=(
+                f"Failed to load experiments: "
+                f"{str(error)}"
             )
-
-        return experiment
-
-    except HTTPException:
-        raise
-
-    except Exception as error:
-
-        raise HTTPException(
-            status_code=500,
-            detail=f"Failed to load experiment: {str(error)}"
         )
 
 
 # ============================================================
 # GET BEST EXPERIMENT
+# IMPORTANT:
+# This route MUST come before /experiments/{experiment_id}
 # ============================================================
 
 @app.get("/experiments/best/result")
@@ -279,12 +256,17 @@ def get_best_experiment():
 
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to load best experiment: {str(error)}"
+            detail=(
+                f"Failed to load best experiment: "
+                f"{str(error)}"
+            )
         )
 
 
 # ============================================================
 # COMPARE TWO EXPERIMENTS
+# IMPORTANT:
+# This route MUST come before /experiments/{experiment_id}
 # ============================================================
 
 @app.get(
@@ -327,6 +309,47 @@ def compare_experiments(
             status_code=500,
             detail=(
                 f"Failed to compare experiments: "
+                f"{str(error)}"
+            )
+        )
+
+
+# ============================================================
+# GET SINGLE EXPERIMENT
+# This dynamic route comes AFTER specific routes.
+# ============================================================
+
+@app.get("/experiments/{experiment_id}")
+def get_experiment(
+    experiment_id: int
+):
+
+    try:
+
+        history = ExperimentHistory()
+
+        experiment = history.get_experiment(
+            experiment_id
+        )
+
+        if experiment is None:
+
+            raise HTTPException(
+                status_code=404,
+                detail="Experiment not found"
+            )
+
+        return experiment
+
+    except HTTPException:
+        raise
+
+    except Exception as error:
+
+        raise HTTPException(
+            status_code=500,
+            detail=(
+                f"Failed to load experiment: "
                 f"{str(error)}"
             )
         )
@@ -439,7 +462,10 @@ def get_system_status():
 
         raise HTTPException(
             status_code=500,
-            detail=f"System check failed: {str(error)}"
+            detail=(
+                f"System check failed: "
+                f"{str(error)}"
+            )
         )
 
 
@@ -477,7 +503,10 @@ def get_imbalanced_research():
 
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to read research data: {str(error)}"
+            detail=(
+                f"Failed to read research data: "
+                f"{str(error)}"
+            )
         )
 
 
@@ -515,5 +544,27 @@ def get_multiseed_research():
 
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to read research data: {str(error)}"
+            detail=(
+                f"Failed to read research data: "
+                f"{str(error)}"
+            )
         )
+
+
+# ============================================================
+# STARTUP EVENT
+# ============================================================
+
+@app.on_event("startup")
+async def startup_event():
+
+    print("\n")
+    print("=" * 60)
+    print("GENFORGE AI API")
+    print("=" * 60)
+    print("Backend started successfully")
+    print("Project root:", PROJECT_ROOT)
+    print("Frontend URL:", FRONTEND_URL)
+    print("Allowed origins:", ALLOWED_ORIGINS)
+    print("=" * 60)
+    print("\n")
